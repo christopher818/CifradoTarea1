@@ -1,3 +1,3 @@
 main: main.o
-	cc main1.o -o main
+	cc main.o -o main
 	
