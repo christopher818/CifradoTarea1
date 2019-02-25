@@ -14,9 +14,12 @@ int main()
 {
 
 	int opcion;
-	struct  Node *lista = create_list(0,NULL);
+	char fecha1[12]={'0'};
+	hashtable_t *ht = ht_create( 27 );
+	struct  Node *lista = create_list(fecha1,ht);
 	char *d_ptr;
 	char *c_ptr;
+	
 
 	while(1)
 	{
@@ -51,8 +54,10 @@ int main()
 					fgets (descifrado, sizeof(descifrado), stdin);
 
 					//Lleno la tabla
-					struct hashtable_s *hashtable = ht_create( 27 );
+					
+					hashtable_t *hashtable = ht_create( 27 );
 					printf("CREO LA TABLA");
+					
 					for(int i=0;i<strlen(cifrado);i++){
 						printf("AGREGA ELEMENTOS");
 						ht_set(hashtable,descifrado[i],cifrado[i]);

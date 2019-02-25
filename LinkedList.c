@@ -195,7 +195,7 @@ struct Node* add2(char *id,hashtable_t *table)
 }
 
 
-int main( int argc, char **argv )
+/*int main( int argc, char **argv )
 {
 	char fecha[12], fecha2[12],fecha3[12],fecha4[12],fecha5[12];
 	struct Node *ptr = NULL;
@@ -239,4 +239,4 @@ int main( int argc, char **argv )
 
 
 	return 0;
-}
+}*/
