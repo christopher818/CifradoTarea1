@@ -23,6 +23,7 @@ int main()
 		printf("● (4) Mostrar un esquema de cifrado\n");
 		printf("● (5) Borrar un esquema de cifrado debido a un error\n");
 		printf("● (6) SALIR\n\n");
+		printf("● Hola\n\n");
 		printf("Opcion: ");
 		fflush(stdout);
 
