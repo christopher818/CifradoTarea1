@@ -17,7 +17,6 @@ See feature_test_macros(7) */
 struct entry_s {
 	char key; 
 	char value;
-	struct entry_s *next;
 };
 
 //Defino el nombre de esa estructura
@@ -69,13 +68,9 @@ int ht_hash( hashtable_t *hashtable, char key ) {
 /* Crear un par key value */
 entry_t *ht_newpair( char key, char value ) {
 	entry_t *newpair;
-
-	if( ( newpair = malloc( sizeof( entry_t ) ) ) == NULL ) {
-		return NULL;
-	}
-	
-	newpair->next = NULL;
-
+	newpair = malloc( sizeof( entry_t ) );
+	newpair->key=key;
+	newpair->value=value;
 	return newpair;
 }
 
@@ -86,8 +81,8 @@ void ht_set( hashtable_t *hashtable, char key, char value ) {
 	entry_t *newpair;
 	newpair = ht_newpair( key, value );
 	index = ht_hash( hashtable, key );
-	//if(hashtable->table[ index ]==NULL){
-	hashtable->table[ index ]=newpair;
+	if(hashtable->table[ index ]==NULL){
+		hashtable->table[ index ]=newpair;}
 }
 
 /* Busca en la tabla su valor correspondiente */
@@ -116,10 +111,11 @@ void display_table( hashtable_t *hashtable ) {
 	
 	printf("\n");
 }
-/*int main( int argc, char **argv ) {
+/*
+int main( int argc, char **argv ) {
 
 	hashtable_t *hashtable = ht_create( 27 );
-
+	ht_newpair(65,66);
 	ht_set( hashtable, 65, 66 );
 	ht_set( hashtable, 66, 71 );
 	//ht_set( hashtable, "V", "Y" );
