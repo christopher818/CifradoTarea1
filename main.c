@@ -56,11 +56,12 @@ int main()
 					//Lleno la tabla
 					
 					hashtable_t *hashtable = ht_create( 27 );
-					printf("CREO LA TABLA");
+					
 					
 					for(int i=0;i<strlen(cifrado);i++){
-						printf("AGREGA ELEMENTOS");
+						printf("AGREGA ELEMENTOS %c , %c",descifrado[i],cifrado[i]);
 						ht_set(hashtable,descifrado[i],cifrado[i]);
+						display_table(hashtable);
 
 					};
 					

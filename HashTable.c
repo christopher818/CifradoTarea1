@@ -86,8 +86,8 @@ void ht_set( hashtable_t *hashtable, char key, char value ) {
 	entry_t *newpair;
 	newpair = ht_newpair( key, value );
 	index = ht_hash( hashtable, key );
-	if(hashtable->table[ index ]==NULL){
-		hashtable->table[ index ]=newpair;}
+	//if(hashtable->table[ index ]==NULL){
+	hashtable->table[ index ]=newpair;
 }
 
 /* Busca en la tabla su valor correspondiente */
@@ -103,7 +103,7 @@ entry_t *ht_get( hashtable_t *hashtable, char key ) {
 	return pair;
 	
 }
-
+	
 void display_table( hashtable_t *hashtable ) {
 
 	for(int i = 0; i < hashtable->size; i++) {
@@ -116,7 +116,15 @@ void display_table( hashtable_t *hashtable ) {
 	
 	printf("\n");
 }
-/*
-int main(){
+/*int main( int argc, char **argv ) {
+
+	hashtable_t *hashtable = ht_create( 27 );
+
+	ht_set( hashtable, 65, 66 );
+	ht_set( hashtable, 66, 71 );
+	//ht_set( hashtable, "V", "Y" );
+	//ht_set( hashtable, "Z", "A" );
+	display_table(hashtable);
+
 	return 0;
 }*/
