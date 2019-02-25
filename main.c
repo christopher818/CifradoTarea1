@@ -51,9 +51,10 @@ int main()
 					fgets (descifrado, sizeof(descifrado), stdin);
 
 					//Lleno la tabla
-					hashtable_t *hashtable = ht_create( SIZE );
-					
+					struct hashtable_s *hashtable = ht_create( 27 );
+					printf("CREO LA TABLA");
 					for(int i=0;i<strlen(cifrado);i++){
+						printf("AGREGA ELEMENTOS");
 						ht_set(hashtable,descifrado[i],cifrado[i]);
 
 					};

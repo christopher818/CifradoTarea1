@@ -194,17 +194,16 @@ struct Node* add2(char *id,hashtable_t *table)
 
 }
 
-/*
+
 int main( int argc, char **argv )
 {
 	char fecha[12], fecha2[12],fecha3[12],fecha4[12],fecha5[12];
 	struct Node *ptr = NULL;
 	hashtable_t *hashtable = ht_create( 27 );
 
-	ht_set( hashtable, "A", "B" );
-	ht_set( hashtable, "B", "T" );
-	ht_set( hashtable, "V", "Y" );
-	ht_set( hashtable, "Z", "A" );
+	ht_set( hashtable, 65, 66 );
+	ht_set( hashtable, 66, 68 );
+	
 	
 
 	
@@ -240,4 +239,4 @@ int main( int argc, char **argv )
 
 
 	return 0;
-}*/
+}
