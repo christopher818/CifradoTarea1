@@ -125,7 +125,7 @@ int delete(char *id)
 
 
 
-void display_list(hashtable_t *table)
+void display_list()
 {
     struct Node *ptr = head;
 
@@ -194,7 +194,7 @@ struct Node* add2(char *id,hashtable_t *table)
 
 }
 
-
+/*
 int main( int argc, char **argv )
 {
 	char fecha[12], fecha2[12],fecha3[12],fecha4[12],fecha5[12];
@@ -240,4 +240,4 @@ int main( int argc, char **argv )
 
 
 	return 0;
-}
+}*/

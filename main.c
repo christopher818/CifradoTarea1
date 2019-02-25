@@ -6,13 +6,17 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include "LinkedList.c"
 
+#define SIZE 27
 
 int main()
 {
 
 	int opcion;
-
+	struct  Node *lista = create_list(0,NULL);
+	char *d_ptr;
+	char *c_ptr;
 
 	while(1)
 	{
@@ -45,6 +49,17 @@ int main()
 					fgets (cifrado, sizeof(cifrado), stdin);
 					printf("Mensaje descifrado: ");
 					fgets (descifrado, sizeof(descifrado), stdin);
+
+					//Lleno la tabla
+					hashtable_t *hashtable = ht_create( SIZE );
+					
+					for(int i=0;i<strlen(cifrado);i++){
+						ht_set(hashtable,descifrado[i],cifrado[i]);
+
+					};
+					
+					add2(fecha,hashtable);
+					display_list();
 
 
 

@@ -15,8 +15,8 @@ See feature_test_macros(7) */
 
 // Creo una estructura que va a ser insertada en cada posicion de la tabla
 struct entry_s {
-	char *key; 
-	char *value;
+	char key; 
+	char value;
 	struct entry_s *next;
 };
 
@@ -61,27 +61,19 @@ hashtable_t *ht_create( int size ) {
 }
 
 /* Funcion de hash para chars de la A-Z */
-int ht_hash( hashtable_t *hashtable, char *key ) {
-	int hashK= (int)key[0];
-	return (hashK-65) % hashtable->size;
+int ht_hash( hashtable_t *hashtable, char key ) {
+	if(key==32){return 26;};
+	return (key-65) % hashtable->size;
 }
 
 /* Crear un par key value */
-entry_t *ht_newpair( char *key, char *value ) {
+entry_t *ht_newpair( char key, char value ) {
 	entry_t *newpair;
 
 	if( ( newpair = malloc( sizeof( entry_t ) ) ) == NULL ) {
 		return NULL;
 	}
-
-	if( ( newpair->key = strdup( key ) ) == NULL ) {
-		return NULL;
-	}
-
-	if( ( newpair->value = strdup( value ) ) == NULL ) {
-		return NULL;
-	}
-
+	
 	newpair->next = NULL;
 
 	return newpair;
@@ -89,16 +81,17 @@ entry_t *ht_newpair( char *key, char *value ) {
 
 /* Insertar un par en una tabla de hash 
 No resuelve colisiones*/
-void ht_set( hashtable_t *hashtable, char *key, char *value ) {
+void ht_set( hashtable_t *hashtable, char key, char value ) {
 	int index;
 	entry_t *newpair;
 	newpair = ht_newpair( key, value );
 	index = ht_hash( hashtable, key );
-	hashtable->table[ index ]=newpair;
+	if(hashtable->table[ index ]==NULL){
+		hashtable->table[ index ]=newpair;}
 }
 
 /* Busca en la tabla su valor correspondiente */
-entry_t *ht_get( hashtable_t *hashtable, char *key ) {
+entry_t *ht_get( hashtable_t *hashtable, char key ) {
 	int index;
 	entry_t *pair;
 
@@ -116,12 +109,14 @@ void display_table( hashtable_t *hashtable ) {
 	for(int i = 0; i < hashtable->size; i++) {
 		
 		if(hashtable->table[ i ] != NULL)
-			printf(" [%s:%s]",hashtable->table[ i ]->key,hashtable->table[ i ]->value);
+			printf(" [%c:%c]",hashtable->table[ i ]->key,hashtable->table[ i ]->value);
 		else
 			printf("[ : ]");
    }
 	
 	printf("\n");
 }
-
-
+/*
+int main(){
+	return 0;
+}*/
