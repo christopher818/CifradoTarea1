@@ -36,7 +36,7 @@ int main()
 		fflush(stdin);
 		scanf("%d",&opcion);
 		assert(getchar()=='\n');
-		printf("\n\n");
+		
 		switch(opcion){
 			case 1:
 				while(1){
