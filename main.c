@@ -142,7 +142,20 @@ int main()
 					printf("%s\n", descifrado);
 
 				*/}
-			case 4: break ;
+			case 4:/*
+				Estrategia:
+				Para mostrar un esquema de cifrado se pediria la fecha de la misma
+				Se buscaria en la lista doblemente enlazada cual es el nodo que
+				esta acorde con la fecha (o el nodo anterior mas proximo) e imprimo con
+				la funcion display
+				
+				Inicio del codigo
+				
+				display_table(nombredelnodo->table);
+			
+			
+				*/ 
+				break ;
 			case 5:	/* para borrar un esquema de cifrado	
 				*
 				*
