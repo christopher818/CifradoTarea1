@@ -78,6 +78,16 @@ int main()
 			case 2:
 				while(1){
 					/*
+					Estrategia:
+					Primero pido la fecha del mensaje a cifrar o descifrar.
+					Con esa información busco en la linked list que elemento corresponde con ese esquema.
+					Luego al tener el nodo le obtengo su atributo table y table desencriptar.
+					Pido por consola el mensaje a cifrar o descifrar y con ht_get tomo letra
+					por letra del mensaje y busco su correspondiente en la tabla de hash,
+					para luego imprimir el mensaje encriptado o real, dependiendo del caso.
+					
+					Inicio del codigo:
+					
 					hashtable_t desencriptar = tail->table_desencriptar;
 					hashtable_t encriptar = tail->table;
 					char cifrado[150];
@@ -102,6 +112,16 @@ int main()
 				*/}
 			case 3:
 				while(1){/*
+				
+					Estrategia:
+					Primero pido la fecha del mensaje a cifrar o descifrar.
+					Con esa información busco en la linked list que elemento corresponde con ese esquema.
+					Luego al tener el nodo le obtengo su atributo table y table desencriptar.
+					Pido por consola el mensaje a cifrar o descifrar y con ht_get tomo letra
+					por letra del mensaje y busco su correspondiente en la tabla de hash,
+					para luego imprimir el mensaje encriptado o real, dependiendo del caso.
+					
+					Inicio del codigo:
 					char cifrado[150];
 					char descifrado[150];
 					printf("Cifrar mensajes:\n\n");
