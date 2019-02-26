@@ -172,7 +172,9 @@ int main()
 				*/
 				printf("\n\nOPCION NO DISPONIBLE\nRevisar el codigo\n\n");
 				break;
-			case 6: return 0;
+			case 6: 
+				printf("\n\nHASTA LUEGO\n:D\n\n");
+				return 0;
 		}
 			 
 	}
