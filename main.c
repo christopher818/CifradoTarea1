@@ -71,8 +71,9 @@ int main()
 					};
 					
 					add2(fecha,encriptar,desencriptar);
-					printf("Se registro un nuevo mensaje pero seguramente con una fecha incorrecta\n\n");
+					printf("\nSe registro un nuevo mensaje y generó este esquema\n");
 					display_table(encriptar);
+					printf("\nPero la fecha seguramente no es correcta\n");
 
 				}
 			case 2:
