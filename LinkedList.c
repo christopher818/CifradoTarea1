@@ -8,6 +8,7 @@
 struct Node {
         char *id;
         hashtable_t *table;
+        hashtable_t *table_desencriptar;
         struct Node *next;
         struct Node *prev;
         };
@@ -15,7 +16,7 @@ struct Node {
 struct Node *head = NULL;
 struct Node *tail = NULL;
 
-struct Node* create_node(char *id,hashtable_t *table,struct Node* next, struct Node* prev)
+struct Node* create_node(char *id,hashtable_t *table,hashtable_t *table_desencriptar,struct Node* next, struct Node* prev)
 {
 	struct  Node *ptr = (struct Node*)malloc(sizeof(struct Node));
 	if (ptr == NULL){
@@ -23,6 +24,7 @@ struct Node* create_node(char *id,hashtable_t *table,struct Node* next, struct N
 		return NULL;
 	}
 	ptr->id = id;
+	ptr->table_desencriptar = table_desencriptar;
 	ptr->table = table;
 	ptr->next = next;
 	ptr->prev = prev;
@@ -30,9 +32,9 @@ struct Node* create_node(char *id,hashtable_t *table,struct Node* next, struct N
 	return ptr;
 };
 
-struct Node* create_list(char *id, hashtable_t *table)
+struct Node* create_list(char *id, hashtable_t *table,hashtable_t *table_desencriptar)
 {
-	struct Node *ptr = create_node(id,table,NULL,NULL);
+	struct Node *ptr = create_node(id,table,table_desencriptar,NULL,NULL);
 
 	head = ptr;
 	tail = ptr;
@@ -42,7 +44,7 @@ struct Node* create_list(char *id, hashtable_t *table)
 
 
 struct Node* add(char *id,hashtable_t *table, _Bool add_to_end)
-{
+{/*
 	if(head == NULL){
 		return (create_list(id,table));
 	}
@@ -61,7 +63,7 @@ struct Node* add(char *id,hashtable_t *table, _Bool add_to_end)
 
     }
     return ptr;
-
+*/
 }
 
 
@@ -139,6 +141,7 @@ void display_list()
         printf("%s\n",ptr->id);
         
         display_table(ptr->table);
+        display_table(ptr->table_desencriptar);
         ptr = ptr->next;
     }
     printf("\n -------Final------- \n");
@@ -165,13 +168,13 @@ void delete_from_list(char *id,hashtable_t *table){
 
 }
 
-struct Node* add2(char *id,hashtable_t *table)
+struct Node* add2(char *id,hashtable_t *table,hashtable_t *table_desencriptar)
 {
 	if(head == NULL){
-		return (create_list(id,table));
+		return (create_list(id,table,table_desencriptar));
 	}
 
-	struct Node* ptr= create_node(id,table,NULL,NULL);
+	struct Node* ptr= create_node(id,table,table_desencriptar,NULL,NULL);
 	struct Node* point=head;
 	
 	while(point != NULL && strcmp(point->id,id)<0 ){

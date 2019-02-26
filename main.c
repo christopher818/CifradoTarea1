@@ -16,7 +16,7 @@ int main()
 	int opcion;
 	char fecha1[12]={'0'};
 	hashtable_t *ht = ht_create( 27 );
-	struct  Node *lista = create_list(fecha1,ht);
+	struct  Node *lista = create_list(fecha1,ht,ht);
 	char *d_ptr;
 	char *c_ptr;
 	
@@ -55,17 +55,19 @@ int main()
 
 					//Lleno la tabla
 					
-					hashtable_t *hashtable = ht_create( 27 );
+					hashtable_t *encriptar = ht_create( 27 );
+					hashtable_t *desencriptar = ht_create( 27 );
 					
 					
 					for(int i=0;i<strlen(cifrado);i++){
 						printf("AGREGA ELEMENTOS %c , %c",descifrado[i],cifrado[i]);
-						ht_set(hashtable,descifrado[i],cifrado[i]);
-						display_table(hashtable);
+						ht_set(encriptar,descifrado[i],cifrado[i]);
+						ht_set(desencriptar,cifrado[i],descifrado[i]);
+						display_table(encriptar);
 
 					};
 					
-					add2(fecha,hashtable);
+					add2(fecha,encriptar,desencriptar);
 					display_list();
 
 
