@@ -3,8 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-#define SIZE 27
-
+/* Creamos la estructura nodo */
 struct Node {
         char *id;
         hashtable_t *table;
@@ -13,9 +12,16 @@ struct Node {
         struct Node *prev;
         };
 
+/* Definimos cabeza y cola */
 struct Node *head = NULL;
 struct Node *tail = NULL;
 
+/* create_node Recibe:
+*  Un string para la fecha
+*  Dos Tablas de Hash
+*  el valor a los dos apuntadores de siguiente y anterior
+* Funcion: Crea un nodo
+*/
 struct Node* create_node(char *id,hashtable_t *table,hashtable_t *table_desencriptar,struct Node* next, struct Node* prev)
 {
 	struct  Node *ptr = (struct Node*)malloc(sizeof(struct Node));
@@ -32,6 +38,11 @@ struct Node* create_node(char *id,hashtable_t *table,hashtable_t *table_desencri
 	return ptr;
 };
 
+/* create_list Recibe:
+*  Un string para la fecha
+*  Dos Tablas de Hash
+* Funcion: Crea una lista
+*/
 struct Node* create_list(char *id, hashtable_t *table,hashtable_t *table_desencriptar)
 {
 	struct Node *ptr = create_node(id,table,table_desencriptar,NULL,NULL);
@@ -42,7 +53,12 @@ struct Node* create_list(char *id, hashtable_t *table,hashtable_t *table_desencr
 };
 
 
-
+/* add Recibe:
+*  Un string para la fecha
+*  Una Tabla de Hash
+*  Un booleano para saber si inserta al principio o al fina
+* Funcion: Inserta solo al principio o al final
+*/
 struct Node* add(char *id,hashtable_t *table, _Bool add_to_end)
 {/*
 	if(head == NULL){
@@ -67,7 +83,10 @@ struct Node* add(char *id,hashtable_t *table, _Bool add_to_end)
 }
 
 
-
+/* add Recibe:
+*  Un string para la fecha
+* Funcion: busca un nodo en la lista
+*/
 struct Node* search(char *id)
 {
 	
@@ -96,6 +115,10 @@ struct Node* search(char *id)
 	return NULL;
 };
 
+/* delete Recibe:
+*  Un string para la fecha
+* Funcion: elimina un nodo de la lista
+*/
 int delete(char *id)
 {
 	struct Node *del = NULL;
@@ -126,7 +149,9 @@ int delete(char *id)
 };
 
 
-
+/* display
+* Funcion: imprime la lista y la tablas tablas de Hash
+*/
 void display_list()
 {
     struct Node *ptr = head;
@@ -151,6 +176,11 @@ void display_list()
     return;
 }
 
+/* Delete_from_lsit Recibe:
+*  Un string para la fecha
+*  Una Tabla de Hash
+* Funcion: indica si se pudo borrar o no se encontro el elemento en la lista
+*/
 void delete_from_list(char *id,hashtable_t *table){
 	int ret = 0;
 
@@ -168,6 +198,11 @@ void delete_from_list(char *id,hashtable_t *table){
 
 }
 
+/* add2 Recibe:
+*  Un string para la fecha
+*  Dos Tablas de Hash
+* Funcion: Inserta en cualquier parte de la lista y lo hace bien
+*/
 struct Node* add2(char *id,hashtable_t *table,hashtable_t *table_desencriptar)
 {
 	if(head == NULL){
