@@ -111,6 +111,7 @@ int main()
 
 				*/
 				break;}
+				printf("\n\nOPCION NO DISPONIBLE\nRevisar el codigo\n\n");
 				break;
 			case 3:
 				while(1){/*
@@ -144,6 +145,7 @@ int main()
 					printf("%s\n", descifrado);
 
 				*/break;}
+				printf("\n\nOPCION NO DISPONIBLE\nRevisar el codigo\n\n");
 				break;
 			case 4:/*
 				Estrategia:
@@ -158,6 +160,7 @@ int main()
 			
 			
 				*/ 
+				printf("\n\nOPCION NO DISPONIBLE\nRevisar el codigo\n\n");
 				break ;
 			case 5:	/* 
 				Estrategia:
@@ -167,6 +170,7 @@ int main()
 				Luego usamos esa informacion para usar la funcion
 				delete_from_list() de nuestra LinkedList
 				*/
+				printf("\n\nOPCION NO DISPONIBLE\nRevisar el codigo\n\n");
 				break;
 			case 6: return 0;
 		}
