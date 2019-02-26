@@ -36,6 +36,7 @@ int main()
 		fflush(stdin);
 		scanf("%d",&opcion);
 		assert(getchar()=='\n');
+		printf("\n\n");
 		switch(opcion){
 			case 1:
 				while(1){
@@ -70,16 +71,49 @@ int main()
 					add2(fecha,encriptar,desencriptar);
 					display_list();
 
-
-
-
 				}
 			case 2:
 				while(1){
+					char cifrado[150];
+					char descifrado[150];
+					printf("Descifrar mensajes:\n\n");
+					printf("Escriba mensaje cifrado : ");
+					fgets (cifrado, sizeof(cifrado), stdin);
+					if((int)cifrado[0]==35){break;};
+					for(int i=0;i<strlen(cifrado);i++){
+						entry_t *elemento=ht_get(desencriptar,cifrado[i]);
+						if (elemento==NULL){
+							descifrado[i]=35;
+						}
+						else{
+							descifrado[i]=(int)elemento->value;
+						}
+
+					}
+					printf("El mensaje descifrado es: \n");
+					printf("%s\n", descifrado);
 
 				}
 			case 3:
 				while(1){
+					char cifrado[150];
+					char descifrado[150];
+					printf("Cifrar mensajes:\n\n");
+					printf("Escriba mensaje real : ");
+					fgets (descifrado, sizeof(descifrado), stdin);
+					if((int)descifrado[0]==35){break;};
+					for(int i=0;i<strlen(descifrado);i++){
+						entry_t *elemento=ht_get(encriptar,descifrado[i]);
+						if (elemento==NULL){
+							descifrado[i]=35;
+						}
+						else{
+							descifrado[i]=(int)elemento->value;
+						}
+
+					}
+					printf("El mensaje descifrado es: \n");
+					printf("%s\n", descifrado);
 
 				}
 			case 4: break ;
