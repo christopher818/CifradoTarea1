@@ -109,7 +109,9 @@ int main()
 					printf("El mensaje descifrado es: \n");
 					printf("%s\n", descifrado);
 
-				*/}
+				*/
+				break;}
+				break;
 			case 3:
 				while(1){/*
 				
@@ -141,7 +143,8 @@ int main()
 					printf("El mensaje descifrado es: \n");
 					printf("%s\n", descifrado);
 
-				*/}
+				*/break;}
+				break;
 			case 4:/*
 				Estrategia:
 				Para mostrar un esquema de cifrado se pediria la fecha de la misma
@@ -165,7 +168,7 @@ int main()
 				delete_from_list() de nuestra LinkedList
 				*/
 				break;
-			case 6: break;
+			case 6: return 0;
 		}
 			 
 	}
