@@ -156,12 +156,13 @@ int main()
 			
 				*/ 
 				break ;
-			case 5:	/* para borrar un esquema de cifrado	
-				*
-				*
-				*  eliminamos de la lista el nodo que contiene el cifrado a borrar
-				*  con la funcion delete_from_list() de nuestra LinkedList
-				*
+			case 5:	/* 
+				Estrategia:
+				Se le pediria al usuario la fecha del esquema a borrar y 
+				con esa información buscamos el nodo que cumple con la fecha
+				o usamos el que tenga la fecha menor mas proxima.
+				Luego usamos esa informacion para usar la funcion
+				delete_from_list() de nuestra LinkedList
 				*/
 				break;
 			case 6: break;
