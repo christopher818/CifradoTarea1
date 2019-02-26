@@ -66,13 +66,13 @@ int main()
 					for(int i=0;i<strlen(cifrado);i++){
 						ht_set(encriptar,descifrado[i],cifrado[i]);
 						ht_set(desencriptar,cifrado[i],descifrado[i]);
-						display_table(encriptar);
+						
 
 					};
 					
 					add2(fecha,encriptar,desencriptar);
 					printf("Se registro un nuevo mensaje pero seguramente con una fecha incorrecta\n\n");
-					
+					display_table(encriptar);
 
 				}
 			case 2:
