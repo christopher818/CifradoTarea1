@@ -24,12 +24,12 @@ int main()
 	while(1)
 	{
 		printf("BIENVENIDO AL PROGRAMA DE DESCIFRADO:\n\nOpciones:\n");
-		printf("● (1) Registrar nuevos mensajes cifrados y sus descifrados\n");
-		printf("● (2) Descifrar mensajes\n");
-		printf("● (3) Cifrar mensajes\n");
-		printf("● (4) Mostrar un esquema de cifrado\n");
-		printf("● (5) Borrar un esquema de cifrado debido a un error\n");
-		printf("● (6) SALIR\n\n");
+		printf(" (1) Registrar nuevos mensajes cifrados y sus descifrados\n");
+		printf(" (2) Descifrar mensajes\n");
+		printf(" (3) Cifrar mensajes\n");
+		printf(" (4) Mostrar un esquema de cifrado\n");
+		printf(" (5) Borrar un esquema de cifrado debido a un error\n");
+		printf(" (6) SALIR\n\n");
 		printf("Opcion: ");
 		fflush(stdout);
 
