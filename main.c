@@ -45,7 +45,7 @@ int main()
 					char cifrado[99];
 					char descifrado[99];
 
-					printf("Registrar nuevos mensajes:\n\n");
+					printf("\n\nRegistrar nuevos mensajes:\n\n");
 					printf("Fecha del mensaje de la forma DD-MM-AAAA : ");
 					fgets (fecha, sizeof(fecha), stdin);
 					if((int)fecha[0]==35){break;};
