@@ -64,7 +64,6 @@ int main()
 					
 					
 					for(int i=0;i<strlen(cifrado);i++){
-						printf("AGREGA ELEMENTOS %c , %c",descifrado[i],cifrado[i]);
 						ht_set(encriptar,descifrado[i],cifrado[i]);
 						ht_set(desencriptar,cifrado[i],descifrado[i]);
 						display_table(encriptar);
@@ -72,7 +71,8 @@ int main()
 					};
 					
 					add2(fecha,encriptar,desencriptar);
-					display_list();
+					printf("Se registro un nuevo mensaje pero seguramente con una fecha incorrecta\n\n");
+					
 
 				}
 			case 2:
@@ -161,6 +161,8 @@ int main()
 			
 				*/ 
 				printf("\n\nOPCION NO DISPONIBLE\nRevisar el codigo\n\n");
+				printf("De momento aquí están todos los elementos de la lista");
+				display_list();
 				break ;
 			case 5:	/* 
 				Estrategia:
