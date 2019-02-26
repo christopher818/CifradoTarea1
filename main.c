@@ -77,6 +77,7 @@ int main()
 				}
 			case 2:
 				while(1){
+					/*
 					hashtable_t desencriptar = tail->table_desencriptar;
 					hashtable_t encriptar = tail->table;
 					char cifrado[150];
@@ -98,9 +99,9 @@ int main()
 					printf("El mensaje descifrado es: \n");
 					printf("%s\n", descifrado);
 
-				}
+				*/}
 			case 3:
-				while(1){
+				while(1){/*
 					char cifrado[150];
 					char descifrado[150];
 					printf("Cifrar mensajes:\n\n");
@@ -120,9 +121,16 @@ int main()
 					printf("El mensaje descifrado es: \n");
 					printf("%s\n", descifrado);
 
-				}
+				*/}
 			case 4: break ;
-			case 5:	break;
+			case 5:	/* para borrar un esquema de cifrado	
+				*
+				*
+				*  eliminamos de la lista el nodo que contiene el cifrado a borrar
+				*  con la funcion delete_from_list() de nuestra LinkedList
+				*
+				*/
+				break;
 			case 6: break;
 		}
 			 
