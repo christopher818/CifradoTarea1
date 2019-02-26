@@ -1,4 +1,11 @@
-#include <stdlib.h>
-#include <stdio.h>
+/*LinkedList.h*/
+
+/*
 
 
+#define FOO_H_
+
+int foo(int x);  
+
+#endif 
+*/

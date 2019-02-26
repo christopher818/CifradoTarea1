@@ -1,6 +1,11 @@
-#define _XOPEN_SOURCE 500 /* Enable certain library functions (strdup) on linux.  See feature_test_macros(7) */
+/*HashTable.h*/
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-#include <string.h>
+/*
+
+
+#define FOO_H_
+
+int foo(int x);  
+
+#endif 
+*/

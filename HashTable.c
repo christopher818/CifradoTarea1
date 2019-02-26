@@ -12,6 +12,7 @@ See feature_test_macros(7) */
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
+#include "HashTable.h"
 
 // Creo una estructura que va a ser insertada en cada posicion de la tabla
 struct entry_s {
