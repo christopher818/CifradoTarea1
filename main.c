@@ -48,11 +48,14 @@ int main()
 					printf("Registrar nuevos mensajes:\n\n");
 					printf("Fecha del mensaje de la forma DD-MM-AAAA : ");
 					fgets (fecha, sizeof(fecha), stdin);
+					if((int)fecha[0]==35){break;};
 
 					printf("Mensaje cifrado: ");
 					fgets (cifrado, sizeof(cifrado), stdin);
+					if((int)cifrado[0]==35){break;};
 					printf("Mensaje descifrado: ");
 					fgets (descifrado, sizeof(descifrado), stdin);
+					if((int)descifrado[0]==35){break;};
 
 					//Lleno la tabla
 					
@@ -74,6 +77,8 @@ int main()
 				}
 			case 2:
 				while(1){
+					hashtable_t desencriptar = tail->table_desencriptar;
+					hashtable_t encriptar = tail->table;
 					char cifrado[150];
 					char descifrado[150];
 					printf("Descifrar mensajes:\n\n");
